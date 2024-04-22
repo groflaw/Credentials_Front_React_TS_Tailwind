@@ -1,7 +1,9 @@
+import LazyLoad from './components/UI/LazyLoad'
+
 function App() {
   return (
     <>
-      <h1 className="text-red-800">Tailwind Test</h1>
+      <LazyLoad />
     </>
   )
 }
