@@ -6,12 +6,12 @@ export default withMT({
   theme: {
     colors: {
       white: '#fff',
-      black: '#000',
+      black: '#0E0E0E',
       primary: {
         0: '#4B56E3',
       },
       gray: {
-        25: '',
+        25: '#A8AEBF',
         100: '',
         200: '',
         300: '',

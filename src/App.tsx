@@ -1,9 +1,11 @@
-import LazyLoad from './components/UI/LazyLoad'
+import Routes from '@/routes'
 
 function App() {
   return (
     <>
-      <LazyLoad />
+      <div className="p-4">
+        <Routes />
+      </div>
     </>
   )
 }
