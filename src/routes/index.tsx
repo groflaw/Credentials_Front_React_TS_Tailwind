@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import LazyLoad from '@/components/UI/LazyLoad'
+import ConfirmOTP from '@/pages/Auth/ConfirmOTP'
 
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const Login = lazy(() => import('@/pages/Auth/Login'))
@@ -16,6 +17,10 @@ const Routes = () => {
     {
       path: '/register',
       element: <Register />,
+    },
+    {
+      path: 'confirm-otp',
+      element: <ConfirmOTP />,
     },
   ]
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import AuthLayout from '@/components/Layout/AuthLayout/AuthLayout'
 import { Controller, useForm } from 'react-hook-form'
 import Input from '@/components/UI/Input'
