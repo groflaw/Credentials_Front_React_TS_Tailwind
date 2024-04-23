@@ -1,11 +1,14 @@
 import { lazy, Suspense } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import LazyLoad from '@/components/UI/LazyLoad'
-import ConfirmOTP from '@/pages/Auth/ConfirmOTP'
 
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const Login = lazy(() => import('@/pages/Auth/Login'))
 const Register = lazy(() => import('@/pages/Auth/Register'))
+const ConfirmOTP = lazy(() => import('@/pages/Auth/ConfirmOTP'))
+const ConnectTransactions = lazy(
+  () => import('@/pages/Auth/ConnectTransactions'),
+)
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -19,8 +22,12 @@ const Routes = () => {
       element: <Register />,
     },
     {
-      path: 'confirm-otp',
+      path: '/confirm-otp',
       element: <ConfirmOTP />,
+    },
+    {
+      path: '/connect',
+      element: <ConnectTransactions />,
     },
   ]
 

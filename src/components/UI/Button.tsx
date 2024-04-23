@@ -15,13 +15,14 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   label,
   type,
+  className,
   onClick,
 }: ButtonProps) => {
   return (
     <>
       <MuiButton
         disabled={disabled}
-        className={`bg-primary-0 rounded-[100px] text-white text-[16px] leading-[12px] h-[56px] w-full`}
+        className={`bg-primary-0 rounded-[100px] text-white text-[16px] leading-[12px] h-[56px] w-full ${className}`}
         disableElevation
         onClick={onClick}
         variant="contained"
