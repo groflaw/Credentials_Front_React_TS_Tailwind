@@ -9,6 +9,7 @@ const ConfirmOTP = lazy(() => import('@/pages/Auth/ConfirmOTP'))
 const ConnectTransactions = lazy(
   () => import('@/pages/Auth/ConnectTransactions'),
 )
+const LinkAccounts = lazy(() => import('@/pages/Auth/LinkAccounts'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -28,6 +29,10 @@ const Routes = () => {
     {
       path: '/connect',
       element: <ConnectTransactions />,
+    },
+    {
+      path: '/link-accounts',
+      element: <LinkAccounts />,
     },
   ]
 
