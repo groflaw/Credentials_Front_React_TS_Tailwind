@@ -6,10 +6,9 @@ const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const Login = lazy(() => import('@/pages/Auth/Login'))
 const Register = lazy(() => import('@/pages/Auth/Register'))
 const ConfirmOTP = lazy(() => import('@/pages/Auth/ConfirmOTP'))
-const ConnectTransactions = lazy(
-  () => import('@/pages/Auth/ConnectTransactions'),
-)
-const LinkAccounts = lazy(() => import('@/pages/Auth/LinkAccounts'))
+const ConnectTransactions = lazy(() => import('@/pages/ConnectTransactions'))
+const LinkAccounts = lazy(() => import('@/pages/LinkAccounts'))
+const CreditScore = lazy(() => import('@/pages/CreditScore'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -33,6 +32,10 @@ const Routes = () => {
     {
       path: '/link-accounts',
       element: <LinkAccounts />,
+    },
+    {
+      path: '/credit-score',
+      element: <CreditScore />,
     },
   ]
 

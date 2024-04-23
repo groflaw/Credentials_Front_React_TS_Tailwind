@@ -12,7 +12,7 @@ export default withMT({
       },
       gray: {
         25: '#A8AEBF',
-        100: '',
+        100: '#F5F6FA',
         200: '',
         300: '',
         400: '#C8CCD9',
