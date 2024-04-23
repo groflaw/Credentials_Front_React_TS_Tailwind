@@ -3,7 +3,7 @@ import Routes from '@/routes'
 function App() {
   return (
     <>
-      <div className="p-4">
+      <div className="p-5">
         <Routes />
       </div>
     </>

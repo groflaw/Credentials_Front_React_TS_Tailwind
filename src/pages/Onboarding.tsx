@@ -66,7 +66,7 @@ const Onboarding: React.FC = () => {
           Create account
         </Link>
         <Link
-          to={`/`}
+          to={`/login`}
           className="bg-white text-primary-0 border-primary-0 border-solid border text-center rounded-[100px] h-[56px] w-full block py-[15px] mt-2"
         >
           Already have account

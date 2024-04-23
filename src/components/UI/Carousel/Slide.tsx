@@ -16,7 +16,7 @@ const Slide: React.FC<SlideProps> = ({
     <div
       className={`slide ${
         currentSlide === index ? 'active' : 'inactive'
-      } flex flex-col justify-center items-center p-4 mt-16`}
+      } flex flex-col justify-center items-center pb-6 mt-16`}
     >
       <img className="" src={slide.image} />
       <h3 className="mt-10 text-black text-[22px] leading-8 font-extrabold text-center">

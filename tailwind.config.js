@@ -24,7 +24,7 @@ export default withMT({
       secondary: '#475467',
     },
     fontFamily: {
-      lato: ['Manrope', 'sans-serif'],
+      manrope: ['Manrope', 'sans-serif'],
     },
     extend: {},
   },
