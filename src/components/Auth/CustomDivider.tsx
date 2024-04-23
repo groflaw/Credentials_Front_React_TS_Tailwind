@@ -1,6 +1,11 @@
 import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
+import React from 'react'
+
+export type CustomDividerProps = {
+  label: string
+}
 
 const useStyles = makeStyles(() => ({
   dividerContainer: {
@@ -15,7 +20,9 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const CustomDivider = () => {
+const CustomDivider: React.FC<CustomDividerProps> = ({
+  label,
+}: CustomDividerProps) => {
   const classes = useStyles()
 
   return (
@@ -28,7 +35,7 @@ const CustomDivider = () => {
         fontSize={16}
         lineHeight={`20px`}
       >
-        or sign in with
+        or {label} with
       </Typography>
       <Divider className={classes.divider} />
     </div>

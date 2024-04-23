@@ -20,11 +20,15 @@ const schema = yup.object().shape({
     .string()
     .required('Please enter your password')
     .min(8, 'Password is too short'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Password much match'),
 })
 
 const defaultValues = {
   email: '',
   password: '',
+  confirmPassword: '',
 }
 
 const Login: React.FC = () => {
@@ -58,7 +62,7 @@ const Login: React.FC = () => {
               lineHeight: '30px',
             }}
           >
-            Welcome back 👋
+            Create Account
           </Typography>
           <Typography
             variant="h6"
@@ -68,7 +72,7 @@ const Login: React.FC = () => {
               marginTop: '8px',
             }}
           >
-            Log in to your Cr3dentials account.
+            Welcome! Create your Cr3dentials account.
           </Typography>
         </div>
         <form
@@ -105,32 +109,30 @@ const Login: React.FC = () => {
               />
             )}
           />
-          <Link to={`/forgot-password`}>
-            <Typography
-              variant="caption"
-              mt={1}
-              sx={{
-                color: '#4B56E3',
-                fontWeight: 600,
-                fontSize: '16px',
-                lineHeight: '12px',
-                textAlign: 'right',
-                display: 'block',
-              }}
-            >
-              Forgot Password?
-            </Typography>
-          </Link>
+          <Controller
+            name="confirmPassword"
+            control={control}
+            render={({ field }) => (
+              <Input
+                field={field}
+                type="password"
+                label="Confirm Password"
+                placeholder="Enter Confirm password"
+                error={!!errors.confirmPassword}
+                helperText={errors?.confirmPassword?.message}
+              />
+            )}
+          />
           <div className="mt-14">
             <Button
-              label="Login"
+              label="Sign up"
               disabled={_.isEmpty(dirtyFields) || !isValid}
               type="submit"
             />
           </div>
         </form>
 
-        <CustomDivider label="sign in" />
+        <CustomDivider label={`sign up`} />
 
         <SSOButtons />
       </div>

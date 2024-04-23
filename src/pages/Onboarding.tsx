@@ -60,7 +60,7 @@ const Onboarding: React.FC = () => {
       />
       <div className="mt-4">
         <Link
-          to={`/`}
+          to={`/register`}
           className="bg-primary-0 text-white text-center rounded-[100px] h-[56px] w-full block py-[15px]"
         >
           Create account

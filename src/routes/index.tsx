@@ -4,6 +4,7 @@ import LazyLoad from '@/components/UI/LazyLoad'
 
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const Login = lazy(() => import('@/pages/Auth/Login'))
+const Register = lazy(() => import('@/pages/Auth/Register'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -11,6 +12,10 @@ const Routes = () => {
     {
       path: '/login',
       element: <Login />,
+    },
+    {
+      path: '/register',
+      element: <Register />,
     },
   ]
 
