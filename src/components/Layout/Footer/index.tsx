@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import AddIcon from '@mui/icons-material/Add'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setModalName } from '@/store/slices/modalSlice'
 
 import HomeIcon from '@/assets/icons/homeIcon.svg'
 import HomeActiveIcon from '@/assets/icons/homeActiveIcon.svg'
@@ -14,6 +16,8 @@ import ProfileActiveIcon from '@/assets/icons/profileActiveIcon.svg'
 
 const Footer: React.FC = () => {
   const { pathname } = useLocation()
+  const dispatch = useAppDispatch()
+
   return (
     <div className="sticky bottom-0 flex justify-between w-full p-3 bg-white border border-b-0 border-gray-100">
       <Link
@@ -56,6 +60,7 @@ const Footer: React.FC = () => {
           height: '48px',
           background: '#4B56E3',
         }}
+        onClick={() => dispatch(setModalName('invoce create modal'))}
       >
         <AddIcon
           sx={{

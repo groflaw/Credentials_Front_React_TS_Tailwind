@@ -8,6 +8,9 @@ import InvoiceItem from '@/components/Invoices/InvoiceItem'
 import type { InvoiceItemProps as InvoiceItemType } from '@/components/Invoices/InvoiceItem'
 import InvoiceImg from '@/assets/images/Invoice.png'
 import Footer from '@/components/Layout/Footer'
+import { useAppDispatch } from '@/store/hooks'
+import { setModalName } from '@/store/slices/modalSlice'
+import { NewInvoiceModalName } from '@/components/UI/Modal/NewInvoiceModal'
 
 const invoices: Array<InvoiceItemType> = [
   {
@@ -48,6 +51,8 @@ const invoices: Array<InvoiceItemType> = [
 ]
 
 const Home: React.FC = () => {
+  const dispatch = useAppDispatch()
+
   return (
     <>
       <div className="p-5 pb-16">
@@ -80,6 +85,7 @@ const Home: React.FC = () => {
               disableElevation
               variant="contained"
               fullWidth={false}
+              onClick={() => dispatch(setModalName(NewInvoiceModalName))}
               sx={{
                 marginTop: '16px',
                 color: 'white',
@@ -127,6 +133,7 @@ const Home: React.FC = () => {
           </Link>
           {invoices.map((invoice: InvoiceItemType) => (
             <InvoiceItem
+              key={invoice.id}
               id={invoice.id}
               name={invoice.name}
               date={invoice.date}

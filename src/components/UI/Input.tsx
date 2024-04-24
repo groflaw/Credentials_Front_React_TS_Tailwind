@@ -14,7 +14,7 @@ export type InputProps = {
   type: string
   placeholder: string
   required?: boolean
-  field: any
+  field?: any
   error?: boolean
   helperText?: string
 }
