@@ -15,7 +15,7 @@ import OutlinedButton from '@/components/UI/OutlinedButton'
 import Button from '@/components/UI/Button'
 import { useAppDispatch } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
-import { NewInvoiceModalName } from '@/components/UI/Modal/NewInvoiceModal'
+import { InvoiceSuccessModalName } from '@/components/UI/Modal/InvoiceSuccessModal'
 
 const InstallmentSwitch = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -70,7 +70,6 @@ const InstallmentSwitch = styled((props: SwitchProps) => (
 
 const CreateInvoice: React.FC = () => {
   const [installment, setInstallment] = useState(false)
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const [invoices, setInvoices] = useState<Array<InvoiceItemType>>([
     {
@@ -90,8 +89,9 @@ const CreateInvoice: React.FC = () => {
   }
 
   const handleCreateMore = () => {
-    navigate('/business/home')
-    dispatch(setModalName(NewInvoiceModalName))
+    // navigate('/business/home')
+    // dispatch(setModalName(NewInvoiceModalName))
+    dispatch(setModalName(InvoiceSuccessModalName))
   }
 
   return (

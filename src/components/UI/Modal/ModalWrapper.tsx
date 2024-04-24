@@ -5,7 +5,10 @@ import Dialog from '@mui/material/Dialog'
 import Slide from '@mui/material/Slide'
 import { TransitionProps } from '@mui/material/transitions'
 
-import NewInvoiceModal from './NewInvoiceModal'
+import NewInvoiceModal, { NewInvoiceModalName } from './NewInvoiceModal'
+import InvoiceSuccessModal, {
+  InvoiceSuccessModalName,
+} from './InvoiceSuccessModal'
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -51,7 +54,8 @@ const ModalWrapper: React.FC = () => {
           },
         }}
       >
-        <NewInvoiceModal />
+        {modalName === NewInvoiceModalName && <NewInvoiceModal />}
+        {modalName === InvoiceSuccessModalName && <InvoiceSuccessModal />}
       </Dialog>
     </>
   )
