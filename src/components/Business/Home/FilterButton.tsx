@@ -10,7 +10,6 @@ export type FilterButtonProps = {
 }
 
 const FilterButton: React.FC<FilterButtonProps> = ({
-  id,
   icon,
   title,
   link,

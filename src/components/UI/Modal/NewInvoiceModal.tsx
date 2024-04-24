@@ -11,6 +11,10 @@ export const NewInvoiceModalName = 'NewInvoiceModal'
 const NewInvoiceModal: React.FC = () => {
   const dispatch = useAppDispatch()
 
+  const handleNextClick = () => {
+    window.location.href = '/business/create-invoice'
+  }
+
   return (
     <div className="px-5 pt-10 pb-5">
       <Typography
@@ -39,7 +43,7 @@ const NewInvoiceModal: React.FC = () => {
           label="Cancel"
           onClick={() => dispatch(setModalName(''))}
         />
-        <Button label="Next" />
+        <Button label="Next" onClick={handleNextClick} />
       </div>
     </div>
   )

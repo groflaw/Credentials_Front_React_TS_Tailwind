@@ -10,6 +10,7 @@ const ConnectTransactions = lazy(() => import('@/pages/ConnectTransactions'))
 const LinkAccounts = lazy(() => import('@/pages/LinkAccounts'))
 const CreditScore = lazy(() => import('@/pages/CreditScore'))
 const BusinessHome = lazy(() => import('@/pages/Business/Home'))
+const CreateInvoice = lazy(() => import('@/pages/Business/CreateInvoice'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -41,11 +42,15 @@ const Routes = () => {
   ]
   const businessRoutes = [
     {
-      path: '/business',
+      path: '/',
       children: [
         {
           path: '/business/home',
           element: <BusinessHome />,
+        },
+        {
+          path: '/business/create-invoice',
+          element: <CreateInvoice />,
         },
       ],
     },

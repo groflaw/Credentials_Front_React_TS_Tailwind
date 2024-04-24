@@ -10,7 +10,6 @@ export type InvoiceItemProps = {
 }
 
 const InvoiceItem: React.FC<InvoiceItemProps> = ({
-  id,
   name,
   date,
   amount,
