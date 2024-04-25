@@ -5,6 +5,8 @@ import AddIcon from '@mui/icons-material/Add'
 import { useAppDispatch } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
 import { NewInvoiceModalName } from '@/components/UI/Modal/NewInvoiceModal'
+import ModalWrapper from '@/components/UI/Modal/ModalWrapper'
+import { useAppSelector } from '@/store/hooks'
 
 import HomeIcon from '@/assets/icons/homeIcon.svg'
 import HomeActiveIcon from '@/assets/icons/homeActiveIcon.svg'
@@ -18,6 +20,7 @@ import ProfileActiveIcon from '@/assets/icons/profileActiveIcon.svg'
 const Footer: React.FC = () => {
   const { pathname } = useLocation()
   const dispatch = useAppDispatch()
+  const { modalName } = useAppSelector((state) => state.modalReducer)
 
   return (
     <div className="sticky bottom-0 flex justify-between w-full p-3 bg-white border border-b-0 border-gray-100">
@@ -105,6 +108,8 @@ const Footer: React.FC = () => {
         />
         <span>Profile</span>
       </Link>
+
+      {modalName !== '' && <ModalWrapper />}
     </div>
   )
 }

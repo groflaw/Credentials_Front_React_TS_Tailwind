@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Typography from '@mui/material/Typography'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
@@ -14,6 +14,8 @@ import type { InvoiceItemProps as InvoiceItemType } from '@/components/Business/
 import OutlinedButton from '@/components/UI/OutlinedButton'
 import Button from '@/components/UI/Button'
 import { useAppDispatch } from '@/store/hooks'
+import ModalWrapper from '@/components/UI/Modal/ModalWrapper'
+import { useAppSelector } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
 import { InvoiceSuccessModalName } from '@/components/UI/Modal/InvoiceSuccessModal'
 
@@ -71,6 +73,12 @@ const InstallmentSwitch = styled((props: SwitchProps) => (
 const CreateInvoice: React.FC = () => {
   const [installment, setInstallment] = useState(false)
   const dispatch = useAppDispatch()
+  const { modalName } = useAppSelector((state) => state.modalReducer)
+
+  useEffect(() => {
+    dispatch(setModalName(''))
+  }, [])
+
   const [invoices] = useState<Array<InvoiceItemType>>([
     {
       id: 1,
@@ -88,9 +96,7 @@ const CreateInvoice: React.FC = () => {
     setInstallment((e.target as HTMLInputElement).checked)
   }
 
-  const handleCreateMore = () => {
-    // navigate('/business/home')
-    // dispatch(setModalName(NewInvoiceModalName))
+  const handleCreate = () => {
     dispatch(setModalName(InvoiceSuccessModalName))
   }
 
@@ -162,9 +168,10 @@ const CreateInvoice: React.FC = () => {
         <Button
           label="Create Invoice"
           className="mt-8"
-          onClick={handleCreateMore}
+          onClick={handleCreate}
         />
       </div>
+      {modalName !== '' && <ModalWrapper />}
     </div>
   )
 }

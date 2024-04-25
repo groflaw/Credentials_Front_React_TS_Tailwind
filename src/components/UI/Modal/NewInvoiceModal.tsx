@@ -5,14 +5,16 @@ import Button from '@/components/UI/Button'
 import OutlinedButton from '@/components/UI/OutlinedButton'
 import { useAppDispatch } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
+import { useNavigate } from 'react-router-dom'
 
 export const NewInvoiceModalName = 'NewInvoiceModal'
 
 const NewInvoiceModal: React.FC = () => {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
 
   const handleNextClick = () => {
-    window.location.href = '/business/create-invoice'
+    navigate('/business/create-invoice')
   }
 
   return (
