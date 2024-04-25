@@ -64,10 +64,10 @@ const InvoiceTab: React.FC = () => {
     labels,
     plotOptions: {
       pie: {
-        customScale: 0.9,
+        customScale: 1,
         expandOnClick: true,
         donut: {
-          size: '70%',
+          size: '85%',
         },
       },
       bar: {
@@ -100,7 +100,7 @@ const InvoiceTab: React.FC = () => {
   return (
     <>
       <div className=" mt-5 border border-[#F5F5F8] rounded-[8px]">
-        <div className="flex flex-col flex-auto w-full  h-[250px]">
+        <div className="flex flex-col flex-auto w-full h-[250px] relative">
           <ReactApexChart
             className="flex items-center justify-center flex-auto w-full h-full"
             options={chartOptions}
@@ -108,6 +108,24 @@ const InvoiceTab: React.FC = () => {
             type={chartOptions.chart?.type}
             height={chartOptions.chart?.height}
           />
+          <div className="absolute left-1/2 translate-x-[-50%] translate-y-[-50%] top-1/2">
+            <Typography
+              fontSize={`27px`}
+              lineHeight={`41px`}
+              textAlign={`center`}
+            >
+              April
+            </Typography>
+            <Typography
+              fontSize={`34px`}
+              fontWeight={700}
+              lineHeight={`34px`}
+              textAlign={`center`}
+              color={`#19191A`}
+            >
+              $16,000
+            </Typography>
+          </div>
         </div>
         <div className="grid grid-cols-2 text-center">
           {items.map((item: ItemType) => (
