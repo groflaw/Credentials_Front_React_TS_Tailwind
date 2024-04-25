@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
         <span>Lending</span>
       </Link>
       <Link
-        to={`/business/home`}
+        to={`/business/profile`}
         className={`flex flex-col w-16 items-center justify-center ${
           pathname.includes('/business/profile')
             ? 'text-primary-0'

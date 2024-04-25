@@ -12,6 +12,7 @@ const CreditScore = lazy(() => import('@/pages/CreditScore'))
 const BusinessHome = lazy(() => import('@/pages/Business/Home'))
 const CreateInvoice = lazy(() => import('@/pages/Business/CreateInvoice'))
 const Statistics = lazy(() => import('@/pages/Business/Statistics'))
+const Profile = lazy(() => import('@/pages/Business/Profile'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -56,6 +57,10 @@ const Routes = () => {
         {
           path: '/business/statistics',
           element: <Statistics />,
+        },
+        {
+          path: '/business/profile',
+          element: <Profile />,
         },
       ],
     },
