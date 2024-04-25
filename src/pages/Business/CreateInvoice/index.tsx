@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Typography from '@mui/material/Typography'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -71,7 +71,7 @@ const InstallmentSwitch = styled((props: SwitchProps) => (
 const CreateInvoice: React.FC = () => {
   const [installment, setInstallment] = useState(false)
   const dispatch = useAppDispatch()
-  const [invoices, setInvoices] = useState<Array<InvoiceItemType>>([
+  const [invoices] = useState<Array<InvoiceItemType>>([
     {
       id: 1,
       title: 'Invoice Item #1',

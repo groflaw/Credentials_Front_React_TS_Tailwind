@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton'
 import AddIcon from '@mui/icons-material/Add'
 import { useAppDispatch } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
+import { NewInvoiceModalName } from '@/components/UI/Modal/NewInvoiceModal'
 
 import HomeIcon from '@/assets/icons/homeIcon.svg'
 import HomeActiveIcon from '@/assets/icons/homeActiveIcon.svg'
@@ -35,7 +36,7 @@ const Footer: React.FC = () => {
         <span>Home</span>
       </Link>
       <Link
-        to={`/business/home`}
+        to={`/business/statistics`}
         className={`flex flex-col w-16 items-center justify-center ${
           pathname.includes('/business/statistics')
             ? 'text-primary-0'
@@ -60,7 +61,7 @@ const Footer: React.FC = () => {
           height: '48px',
           background: '#4B56E3',
         }}
-        onClick={() => dispatch(setModalName('invoce create modal'))}
+        onClick={() => dispatch(setModalName(NewInvoiceModalName))}
       >
         <AddIcon
           sx={{

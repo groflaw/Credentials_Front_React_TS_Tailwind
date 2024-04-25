@@ -11,6 +11,7 @@ const LinkAccounts = lazy(() => import('@/pages/LinkAccounts'))
 const CreditScore = lazy(() => import('@/pages/CreditScore'))
 const BusinessHome = lazy(() => import('@/pages/Business/Home'))
 const CreateInvoice = lazy(() => import('@/pages/Business/CreateInvoice'))
+const Statistics = lazy(() => import('@/pages/Business/Statistics'))
 
 const Routes = () => {
   const publicRoutes = [{ path: '/', element: <Onboarding /> }]
@@ -51,6 +52,10 @@ const Routes = () => {
         {
           path: '/business/create-invoice',
           element: <CreateInvoice />,
+        },
+        {
+          path: '/business/statistics',
+          element: <Statistics />,
         },
       ],
     },

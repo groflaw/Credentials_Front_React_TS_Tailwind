@@ -12,7 +12,7 @@ import { useAppDispatch } from '@/store/hooks'
 import { setModalName } from '@/store/slices/modalSlice'
 import { NewInvoiceModalName } from '@/components/UI/Modal/NewInvoiceModal'
 
-const invoices: Array<InvoiceItemType> = [
+export const invoices: Array<InvoiceItemType> = [
   {
     id: 1,
     name: 'Christopher Barton',
