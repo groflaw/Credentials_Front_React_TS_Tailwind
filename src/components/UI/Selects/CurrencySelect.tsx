@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import DollarIcon from '@/assets/icons/dollar.svg'
 
 const CurrencySelect: React.FC = () => {
-  const [currency, setCurrency] = useState('usd')
+  const [currency, setCurrency] = useState('ksh')
 
   const handleChange = (event: SelectChangeEvent) => {
     setCurrency(event.target.value as string)
@@ -44,13 +44,13 @@ const CurrencySelect: React.FC = () => {
           },
         }}
       >
+        <MenuItem value={`ksh`}>
+          <img src={DollarIcon} alt="kenyan shilling icon" />
+          <span className="ml-3">Kenyan Shilling</span>
+        </MenuItem>
         <MenuItem value={`usd`}>
           <img src={DollarIcon} alt="dollar usd icon" />
           <span className="ml-3">USD Dollar</span>
-        </MenuItem>
-        <MenuItem value={`eur`}>
-          <img src={DollarIcon} alt="dollar usd icon" />
-          <span className="ml-3">EURO</span>
         </MenuItem>
       </Select>
     </div>
