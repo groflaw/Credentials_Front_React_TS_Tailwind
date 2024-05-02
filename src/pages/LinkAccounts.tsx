@@ -50,7 +50,7 @@ const LinkAccounts: React.FC = () => {
             marginTop: '8px',
           }}
         >
-          Link your accounts for a smoother and more convenient payment
+          Link your accounts for a smoother and more convenient
           experience!
         </Typography>
       </div>
