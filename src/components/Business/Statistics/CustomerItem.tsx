@@ -34,7 +34,7 @@ const CustomerItem: React.FC<CustomerItemProps> = ({
           {email}
         </Typography>
       </div>
-      <div className="flex items-center col-span-1">
+      <div className="flex items-center justify-end col-span-1">
         <IconButton>
           <SvgIcon>
             <svg
