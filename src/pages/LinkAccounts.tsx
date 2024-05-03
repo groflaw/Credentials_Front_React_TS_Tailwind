@@ -96,7 +96,7 @@ const LinkAccounts: React.FC = () => {
             borderBottom: '1px solid #F5F5F8',
           }}
         >
-          <div className="pl-3">Add New Account</div>
+          <div className="pl-3">Add New Account!</div>
         </Button>
       </div>
     </AuthLayout>
