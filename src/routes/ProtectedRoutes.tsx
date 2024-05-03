@@ -1,2 +1,10 @@
-// Here was nothing.
-// we have to add ProtectedRoutes to this file.
+const ProtecdedRoutes ={
+    // {
+    //     path: '/protectedtroute1',
+    //     element: <ProtectedComponent1 />,
+    //   },
+    //   {
+
+    //   }
+}
+export default ProtecdedRoutes;
