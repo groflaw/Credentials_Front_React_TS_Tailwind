@@ -18,7 +18,7 @@ const theme = createTheme({
           boxShadow: 'none',
           '&:hover, &:focus': {
             boxShadow: 'none',
-            backgroundColor: '#5058E7',
+            backgroundColor: 'blue',
           },
         },
       },
