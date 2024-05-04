@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const modalSlice = createSlice({
-  name: 'modal',
+  name: 'Modals',
   initialState,
   reducers: {
     reset: () => initialState,
