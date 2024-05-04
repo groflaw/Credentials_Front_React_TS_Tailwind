@@ -74,7 +74,7 @@ const InvoiceItem: React.FC<InvoiceItemProps> = ({
           sx={{
             fontWeight: 700,
             fontSize: '16px',
-            lineHeight: '20px',
+             lineHeight: '20px',
             background: badgeBgColor,
             color: badgeColor,
             borderRadius: '100px',
